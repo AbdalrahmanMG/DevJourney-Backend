@@ -1,0 +1,18 @@
+{
+    "users":
+    [
+        {
+            "name":"Abdo",
+            "username":"Temo200",
+            "email":"abdo@test.com",
+            "password":"abdo123",
+            "role":"user"
+        },
+        {
+            "firstname":"abdo",
+            "lastname":"temo",
+            "email":"abdo@test2.com",
+            "password":"abdo123"
+        }
+    ]
+}
