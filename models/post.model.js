@@ -21,6 +21,10 @@ const postSchema = new mongoose.Schema({
     type: Date,
     default: Date.now,
   },
+  categoryID: {
+    type: Number,
+    required: true,
+  },
 });
 
 const Post = mongoose.model("Post", postSchema);
