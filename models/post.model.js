@@ -1,32 +1,35 @@
 const mongoose = require("mongoose");
 
-const postSchema = new mongoose.Schema({
-  title: {
-    type: String,
-    required: true,
-  },
-  body: {
-    type: String,
-    required: true,
-  },
-  createdBy: {
-    type: Number,
-    required: true,
-  },
-  createdAt: {
-    type: Date,
-    default: Date.now,
-  },
-  UpdatedAt: {
-    type: Date,
-    default: Date.now,
-  },
-  categoryID: {
-    type: Number,
-    required: true,
-  },
-});
+// const Schema =mongoose.Schema
 
-const Post = mongoose.model("Post", postSchema);
+const postSchema = new mongoose.Schema(
+  {
+    title: {
+      type: String,
+      required: true,
+    },
+    body: {
+      type: String,
+      required: true,
+    },
+    createdBy: {
+      type: String,
+      required: true,
+    },
+    User_id: {
+      type: String,
+      required: true,
+    },
+    category: {
+      type: String,
+      required: true,
+      enum: ["Historical", "Biographical"],
+    },
+  },
+  // for automatic createdAt and updatedAt
+  { timestamps: true }
+);
+
+const Post = mongoose.model("Post111", postSchema);
 
 module.exports = Post;
