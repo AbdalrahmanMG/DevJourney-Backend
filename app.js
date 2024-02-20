@@ -2,19 +2,24 @@ const express = require("express");
 const dotenv = require("dotenv");
 const userRoute = require("./routes/user.route");
 const authRoute = require("./routes/auth.router");
+
 const storsRoute = require("./routes/stories.router");
 const connect=require("./dataBase/connectToDB");
+
+const {verifyToken , checkRole} = require("./middleware/auth");
 
 
 dotenv.config();
 const app = express();
-const PORT = 5000 || process.env.PORT;
+const PORT =  process.env.PORT||5000;
+
+
 
 
 app.use(express.json());
 
-app.use("/user", userRoute);
-app.use("/auth", authRoute);
+app.use("/user",verifyToken,checkRole(), userRoute);
+app.use("/devjourney", authRoute);
 
 //stories
 app.use("/story", storsRoute);
