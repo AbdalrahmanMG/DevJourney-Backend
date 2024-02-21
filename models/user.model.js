@@ -4,50 +4,50 @@ const userSchema = new mongoose.Schema(
   {
     firstname: {
       type: String,
-      required: true,
+      // required: true,
     },
     lastname: {
       type: String,
-      required: true,
+      // required: true,
     },
     email: {
       type: String,
-      required: true,
+      // required: true,
       unique: true,
     },
     password: {
       type: String,
-      required: true,
+      // required: true,
     },
     age: {
       type: Number,
-      required: true,
+      // required: true,
       min: 12,
       max: 80,
     },
     address: {
       country: {
         type: String,
-        required: true,
+        // required: true,
       },
       city: {
         type: String,
-        required: true,
+        // required: true,
       },
     },
     gender: {
       type: String,
-      required: true,
+      // required: true,
       enum: ["male", "female"],
     },
     role: {
       type: String,
-      required: true,
+      // required: true,
       enum: ["admin", "user"],
     },
     phoneNumber: {
       type: String,
-      required: true,
+      // required: true,
       validate: {
         validator: function (number) {
           return /^[0-9]{11}$/.test(number);
@@ -56,7 +56,7 @@ const userSchema = new mongoose.Schema(
     },
     isActive: {
       type: Boolean,
-      required: true,
+      // required: true,
       default: true
     },
   },
